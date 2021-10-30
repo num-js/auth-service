@@ -75,5 +75,21 @@ const signinUser = async (req, res) => {
     }
 }
 
+const testProtected = async (req, res) => {
+    try {
+        res.status(200).json({ message: 'Access in protected resources', user: req.user })
+    } catch (error) {
+        res.status(400).json({ error: 'internal server error: ' + error })
+    }
+}
 
-module.exports = { signupUser, signinUser };
+const testUnProtected = async (req, res) => {
+    try {
+        res.status(200).json({ message: 'Access in Un-protected resources', user: req.user })
+    } catch (error) {
+        res.status(400).json({ error: 'internal server error: ' + error })
+    }
+}
+
+
+module.exports = { signupUser, signinUser, testUnProtected, testProtected };
