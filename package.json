@@ -1,16 +1,18 @@
 {
-  "name": "auth-backend-jwt",
+  "name": "auth-service",
   "version": "1.0.0",
-  "description": "auth with jwt",
+  "description": "authentication service for all Users",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "nodemon": "nodemon app.js"
   },
   "keywords": [
     "auth",
-    "jwt"
+    "jwt",
+    "auth-service"
   ],
-  "author": "Num",
+  "author": "N_Ah",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

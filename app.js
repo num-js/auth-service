@@ -25,7 +25,7 @@ mongoose.connect(process.env.DB_URI, {
         console.log("Connected with MongoDB ");
     })
     .catch((err) => {
-        console.log("Error in with MongoDB ", err);
+        console.log("Error in DB Connection: ", err);
     });
 
 
@@ -35,5 +35,5 @@ app.get('/', (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log('App Started');
+    console.log('App Started at port: ', PORT);
 });
