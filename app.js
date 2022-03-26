@@ -11,9 +11,12 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use('/api', require('./routes/authRoutes'))
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
     res.status(200).json({ message: 'Welcome in AUTH Service, Enjoy the /signup & /signin POST routes.' })
-})
+});
+app.get('/', (req, res) => {
+    res.status(200).json({ message: 'Welcome in AUTH Service, Enjoy the /api/signup & /api/signin POST routes.' })
+});
 
 //Connection with DB
 mongoose.connect(process.env.DB_URI, {
