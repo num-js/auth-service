@@ -8,7 +8,7 @@ const authMiddleware = (req, res, next) => {
         }
 
         //Verify Token
-        const { userId } = jwt.verify(authorization, process.env.JWT_SECRET);
+        const { userId } = jwt.verify(authorization, process.env.JWT_SECRET_AUTH_SERVICE);
         req.user = userId;
 
         next();
